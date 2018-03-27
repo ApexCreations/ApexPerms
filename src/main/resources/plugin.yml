@@ -1,0 +1,6 @@
+name: ApexPerms
+version: ${project.version}
+main: ApexPerms
+load: STARTUP
+authors: [Majr, Savvy]
+description: Official hyrise server core
