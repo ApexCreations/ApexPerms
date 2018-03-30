@@ -2,6 +2,7 @@ package io.apexcreations.perms.impl;
 
 import com.google.common.collect.Sets;
 import io.apexcreations.perms.api.IGroup;
+import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.permissions.Permission;
 
 import java.util.List;

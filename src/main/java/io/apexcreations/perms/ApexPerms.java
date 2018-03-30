@@ -13,9 +13,6 @@ import java.util.HashMap;
 import java.util.UUID;
 
 public final class ApexPerms extends JavaPlugin {
-    
-    @Getter
-    private static ApexPerms instance;
     @Getter
     private HashMap<Integer, IGroup> ranks = new HashMap<>();
     @Getter
@@ -23,21 +20,18 @@ public final class ApexPerms extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        instance = this;
-
-        register(this, new PlayerListeners());
+        register(new PlayerListeners());
     }
     
     // Why did you need this as static?
-    private void register(Plugin plugin, Listener... listeners) {
+    private void register(Listener... listeners) {
         for (Listener listener : listeners) {
-            Bukkit.getPluginManager().registerEvents(listener, plugin);
+            getServer().getPluginManager().registerEvents(listener, this);
         }
     }
 
     @Override
     public void onDisable() {
-        instance = null;
     }
 
 }

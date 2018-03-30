@@ -19,13 +19,13 @@ public class User implements IUser {
     private UUID uniqueId;
     private IGroup rank;
     private PermissionAttachment permissionAttachment;
-    
+
     private List<IUser> users;
 
     public User(UUID uniqueId) {
         this.uniqueId = uniqueId;
-        this.permissionAttachment = Bukkit.getPlayer(uniqueId).addAttachment(ApexPerms.getInstance());
-        this.rank = ApexPerms.getInstance().getRanks().get(0);
+     // this.permissionAttachment = Bukkit.getPlayer(uniqueId).addAttachment(ApexPerms.getInstance());
+     // this.rank = ApexPerms.getInstance().getRanks().get(0);
 
         updatePermissions();
         users = Lists.newArrayList();
